@@ -15,6 +15,13 @@
         .font-bebas {
             font-family: 'Bebas Neue', cursive;
         }
+        @font-face {
+            font-family: 'Xenophone';
+            src: url('fonts/xenophone.ttf') format('truetype');
+        }
+        .font-xeno {
+            font-family: 'Xenophone', cursive;
+        }
         .hero-bg {
             background-image: url('bared wire.jpg'); /* Imagen de fondo */
             background-size: cover;
@@ -65,7 +72,7 @@
                 <div class="flex items-center">
                     <a href="index.html" class="flex-shrink-0 flex items-center space-x-2">
                         <img class="h-10 w-auto" src="frontera180.png" alt="Logo Frontera IT" onerror="this.onerror=null; this.src='https://placehold.co/180x180/E5B252/FFFFFF?text=Logo';">
-                        <span class="font-bebas text-3xl text-custom-yellow">Frontera IT</span>
+                        <span class="font-Xenophone text-4xl text-custom-yellow">frontera it</span>
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -182,7 +189,7 @@
                 <div>
                     <div class="flex items-center mb-4">
                         <img class="h-8 w-auto mr-2" src="frontera180.png" alt="Logo Frontera IT en pie de página" onerror="this.onerror=null; this.src='https://placehold.co/80x80/E5B252/FFFFFF?text=Logo';">
-                        <h3 class="font-bebas text-2xl text-white">Frontera IT</h3>
+                        <h3 class="font-Xenophone text-2xl text-white">frontera it</h3>
                     </div>
                     <p class="text-sm">Transformando negocios a través de la tecnología y la estrategia de datos.</p>
                 </div>
@@ -228,7 +235,9 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-custom-gray pt-8 text-center text-sm">
-                <p>&copy; <span id="currentYear"></span> Frontera IT. Todos los derechos reservados.</p>
+                <p>&copy; <span id="currentYear"></span> 
+                    <p class="font-Xenophone  text-white">frontera it</p>
+                   Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
