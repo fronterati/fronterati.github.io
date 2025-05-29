@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Servicios - Frontera IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #374151; /* gray-700 por defecto para el texto */
+        }
+        .font-bebas {
+            font-family: 'Bebas Neue', cursive;
+        }
+        @font-face {
+            font-family: 'Xenophone';
+            src: url('fonts/xenophone.ttf') format('truetype');
+        }
+        .font-xeno {
+            font-family: 'Xenophone', cursive;
+        }
+        .hero-bg {
+            background-image: url('bared wire.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1); 
+        }
+        .service-card {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .hexagon-icon-bg {
+            width: 64px;
+            height: 73.9px;
+            background-color: #E5B252; 
+            opacity: 0.8; 
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        /* Colores personalizados */
+        .bg-custom-yellow { background-color: #E5B252; } 
+        .text-custom-yellow { color: #E5B252; }
+        .hover-bg-custom-yellow-dark:hover { background-color: #D4A147; } 
+        .hover-text-custom-yellow-dark:hover { color: #D4A147; }
+
+        .bg-custom-gray-dark { background-color: #1F2937; } 
+        .bg-custom-gray-medium { background-color: #374151; } 
+        .bg-custom-gray-light { background-color: #F3F4F6; } 
+        .text-custom-gray-light { color: #D1D5DB; } 
+        .border-custom-gray { border-color: #4B5563; } 
+    </style>
+</head>
+<body class="bg-custom-gray-light">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center space-x-2">
+                        <img class="h-10 w-auto" src="frontera180.png" alt="Logo Frontera IT" onerror="this.onerror=null; this.src='https://placehold.co/180x180/E5B252/FFFFFF?text=Logo';">
+                        <span class="font-Xenophone text-4xl text-custom-yellow">frontera it</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-600 hover:bg-custom-yellow hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Inicio</a>
+                        <a href="services.html" class="text-gray-600 bg-custom-yellow text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out" aria-current="page">Servicios</a>
+                        <a href="about.html" class="text-gray-600 hover:bg-custom-yellow hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Nosotros</a>
+                        <a href="contact.html" class="text-gray-600 hover:bg-custom-yellow hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">Contacto</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-white hover:bg-custom-yellow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                <a href="index.html" class="text-gray-700 hover:bg-custom-yellow hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Inicio</a>
+                <a href="services.html" class="text-gray-700 bg-custom-yellow text-white block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out" aria-current="page">Servicios</a>
+                <a href="about.html" class="text-gray-700 hover:bg-custom-yellow hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Nosotros</a>
+                <a href="contact.html" class="text-gray-700 hover:bg-custom-yellow hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-150 ease-in-out">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-custom-gray-medium py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-bebas text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-wide">
+                Nuestros Servicios
+            </h1>
+            <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+                Soluciones expertas en Arquitectura Empresarial, de Soluciones y Gobierno de Datos.
+            </p>
+        </div>
+    </header>
+
+    <main class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                 <h2 class="font-bebas text-3xl font-bold text-gray-800 sm:text-4xl tracking-wide">Detalle de Servicios</h2>
+                 <p class="mt-3 text-lg text-gray-600">Descubra cómo podemos ayudarle.</p>
+            </div>
+
+            <!-- Sección Arquitectura Empresarial -->
+            <section id="arquitectura-empresarial" class="mb-16 scroll-mt-20">
+                <div class="bg-custom-gray-light p-8 rounded-xl shadow-lg">
+                    <h3 class="font-bebas text-2xl font-semibold text-gray-800 mb-4 tracking-wide">Arquitectura Empresarial</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        La Arquitectura Empresarial es fundamental para alinear la estrategia de TI con los objetivos generales del negocio. Ayudamos a las organizaciones a desarrollar un roadmap tecnológico coherente que optimice las operaciones, reduzca costos y fomente la innovación. Nuestro enfoque incluye la evaluación de la arquitectura actual, la identificación de brechas y la definición de una arquitectura objetivo que soporte el crecimiento futuro.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                        <li>Análisis y diagnóstico del estado actual de la arquitectura.</li>
+                        <li>Definición de principios y estándares arquitectónicos.</li>
+                        <li>Diseño de la arquitectura objetivo (negocio, datos, aplicaciones, tecnología).</li>
+                        <li>Planificación de la hoja de ruta para la implementación.</li>
+                        <li>Gobernanza de la arquitectura para asegurar la alineación continua.</li>
+                    </ul>
+                    <a href="contact.html" class="inline-block bg-custom-yellow text-gray-800 font-bebas text-xl py-2 px-6 rounded-md hover-bg-custom-yellow-dark hover:text-white transition duration-300 cta-hover tracking-wider">
+                        Solicitar Consulta
+                    </a>
+                </div>
+            </section>
+
+            <!-- Sección Arquitectura de Solución -->
+            <section id="arquitectura-solucion" class="mb-16 scroll-mt-20">
+                <div class="bg-custom-gray-light p-8 rounded-xl shadow-lg">
+                    <h3 class="font-bebas text-2xl font-semibold text-gray-800 mb-4 tracking-wide">Arquitectura de Solución</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Nos especializamos en diseñar arquitecturas de solución robustas, escalables y seguras que aborden desafíos de negocio específicos. Traducimos los requisitos funcionales y no funcionales en especificaciones técnicas detalladas, seleccionando las tecnologías más adecuadas y garantizando la integración óptima con los sistemas existentes. Nuestro objetivo es entregar soluciones que no solo funcionen, sino que también aporten valor estratégico.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                        <li>Definición de requisitos técnicos y funcionales.</li>
+                        <li>Selección de tecnologías y plataformas.</li>
+                        <li>Diseño de componentes, interfaces e interacciones.</li>
+                        <li>Aseguramiento de la escalabilidad, rendimiento y seguridad.</li>
+                        <li>Documentación técnica y diagramas de arquitectura.</li>
+                    </ul>
+                    <a href="contact.html" class="inline-block bg-custom-yellow text-gray-800 font-bebas text-xl py-2 px-6 rounded-md hover-bg-custom-yellow-dark hover:text-white transition duration-300 cta-hover tracking-wider">
+                        Más Información
+                    </a>
+                </div>
+            </section>
+
+            <!-- Sección Gobierno de Datos -->
+            <section id="gobierno-datos" class="mb-16 scroll-mt-20">
+                <div class="bg-custom-gray-light p-8 rounded-xl shadow-lg">
+                    <h3 class="font-bebas text-2xl font-semibold text-gray-800 mb-4 tracking-wide">Gobierno de Datos</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Un gobierno de datos efectivo es crucial para maximizar el valor de los activos de información de una organización. Ayudamos a establecer marcos de gobernanza que aseguren la calidad, integridad, seguridad y cumplimiento normativo de los datos. Esto incluye la definición de roles y responsabilidades, políticas, estándares y procesos para la gestión de datos a lo largo de su ciclo de vida.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                        <li>Establecimiento de un marco de gobierno de datos.</li>
+                        <li>Definición de políticas y estándares de datos.</li>
+                        <li>Gestión de la calidad de los datos (Data Quality).</li>
+                        <li>Gestión de metadatos y linaje de datos.</li>
+                        <li>Cumplimiento normativo (GDPR, CCPA, etc.) y seguridad de datos.</li>
+                    </ul>
+                    <a href="contact.html" class="inline-block bg-custom-yellow text-gray-800 font-bebas text-xl py-2 px-6 rounded-md hover-bg-custom-yellow-dark hover:text-white transition duration-300 cta-hover tracking-wider">
+                        Consultar Ahora
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-custom-gray-dark text-custom-gray-light py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img class="h-8 w-auto mr-2" src="frontera180.png" alt="Logo Frontera IT en pie de página" onerror="this.onerror=null; this.src='https://placehold.co/80x80/E5B252/FFFFFF?text=Logo';">
+                        <h3 class="font-Xenophone text-2xl text-white">frontera it</h3>
+                    </div>
+                    <p class="text-sm">Transformando negocios a través de la tecnología y la estrategia de datos.</p>
+                </div>
+                <div>
+                    <h3 class="font-bebas text-xl font-semibold text-white mb-4 tracking-wide">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-custom-yellow transition duration-150">Inicio</a></li>
+                        <li><a href="services.html" class="hover:text-custom-yellow transition duration-150">Servicios</a></li>
+                        <li><a href="about.html" class="hover:text-custom-yellow transition duration-150">Nosotros</a></li>
+                        <li><a href="contact.html" class="hover:text-custom-yellow transition duration-150">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bebas text-xl font-semibold text-white mb-4 tracking-wide">Contacto</h3>
+                    <p class="text-sm">Email: contactenos@fronterait.com</p>
+                    <p class="text-sm">Teléfono: +57 3053079501</p>
+                    <!-- Redes Sociales (opcional) -->
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-custom-gray text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> 
+                    <p class="font-Xenophone  text-white">frontera it</p>
+                   Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOpenIcon = mobileMenuButton.querySelector('svg:first-child');
+        const mobileMenuCloseIcon = mobileMenuButton.querySelector('svg:last-child');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuOpenIcon.classList.toggle('hidden');
+            mobileMenuCloseIcon.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
